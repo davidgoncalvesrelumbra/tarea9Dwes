@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<!-- Versión 1.0 -->
+<head>
+<style>
+
+body{
+	
+
+	background-color :#FADEB2 ;
+	text-align:center;
+}
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<script> 
+
+/**
+* funcion documento.
+*
+* @param empieza la funcion ,una vez iniciada detecta si se ha escrito.
+*
+* @return retorna el documento libros
+*/
+$(document).ready(function(){
+$("#texto").keyup(function(){
+$("#sugerencias").load("autores.php?action=get_libros&q=" + $("#texto").val());
+});
+});	
+
+</script>
+</head>
+<body>
+<p><b>Busqueda de Autores</b></p>
+<form>
+<!--
+Cada vez que tecleamos algo en este field se ejecutará mostrar_sugerencias
+-->
+<script>
+
+
+</script>
+Autor: <input type="text" id="texto">
+</form>
+<!-- En el span con id="sugerencias" mostraremos las coincidencias -->
+<p><strong>Autores encontrados:</strong> <span id="sugerencias" style="color: red;"></span></p>
+</body>
+</html>
